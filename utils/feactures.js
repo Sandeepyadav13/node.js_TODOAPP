@@ -7,8 +7,8 @@ import Jwt  from "jsonwebtoken";
     res.status(statuscode).cookie("token",token, {
         httpOnly:true,
         maxAge:15*60*1000,
-        Secure:process.env.NODE_ENV==="Development"?false: true,
         sameSite:process.env.NODE_ENV==="Development"?"lax":"none",
+        Secure:process.env.NODE_ENV==="Development"?false: true,
 
     }).json({
         success: true,
